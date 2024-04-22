@@ -62,15 +62,13 @@ Fill in the config file with the data received from the previous steps.
 ```
 WORKSPACE_ID:ffd210d2-0628-41fe-bcdd-1348888e14f
 WORKSPACE_KEY:ANEtg2PEjR5CCgVj3z4lzM2pRXPh8W8888gJwSqpw3Czv5U5t221MZJZtHRSpui4qyaV0elS398oZzmdHcwvhQ==
-ARM_ENDPOINT:adminportal.local.azurestack.external
+ARM_ENDPOINT:adminmanagement.local.azurestack.external
 TENANT_NAME:mydomain.onmicrosoft.com
 CLIENT_ID:117b644e-abad-4d8e-5s4s-0a21ca6cab3d
 CLIENT_SECRET:CgVj3z4lzM2pRXPh8W8888gJwSqpw3Czv5
 ```
 ### Run the script
 After you have prepared the config file. You are ready to run the script. Moved the script and the config file to a dedicated server. Using the command line or PowerShell ISE run the collector.ps1 script.
-
-The script will use current date and time and collect all data since this instance. After sending the data into Log Analytics, it will save the last data timestamp into a local database file and will use this timestamp as default during the next time.
 
 ### Run on schedule
 In order to collect the data periodically use Task Manager in Windows to schedule a periodic script run.

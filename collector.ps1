@@ -35,7 +35,6 @@ Function Get-Config ($Path) {
     Get-Content $Path | Foreach-Object { 
         $var = $_.Split(':') 
         New-Variable -Name $var[0] -Value $var[1]
-        $STORAGE_ACCOUNT = $ConnectionString.Split(';').Split('=')[3] 
     }
     $Output = @{
         WorkspaceId  = $WORKSPACE_ID
@@ -92,7 +91,7 @@ Function Post-LogAnalyticsData($customerId, $sharedKey, $body, $logType, $TimeSt
 
 #setup config
 $TimeStamp = Get-Date
-$TimeStampField = "CreatedTimestamp"
+$TimeStampField = "Created"
 $Files = Setup-Collector
 $Config = Get-Config $Files.ConfigPath
 
